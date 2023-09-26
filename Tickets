@@ -1,0 +1,75 @@
+#include <iostream>
+using namespace std;
+#include <iomanip>
+int main()
+{
+
+    double budget = 10.00;
+    char ticket_wanted;
+
+    cout << "What is your budget?" << endl;
+    cin  >> budget;
+
+    cout << "Which of these seats would you like to take (G, B, P or O)?" << endl;
+    cin >> ticket_wanted;
+
+    toupper(ticket_wanted);
+
+    if (isdigit (budget) || budget <= 0 )
+    {
+        cout << "Please enter valid input." << endl;
+        return 0;
+    }
+
+    if (ticket_wanted != 'G' && ticket_wanted != 'B' &&  ticket_wanted != 'O' && ticket_wanted != 'P' )
+    {
+        cout << "Please enter a valid input." << endl;
+        return 0;
+    }
+
+    if  (ticket_wanted == 'O' && budget >= 1950.33)
+    {
+        cout << "Yes, this seat is within your budget." << endl;
+        return 0;
+    }
+    else if  (ticket_wanted == 'P' && budget >= 1684.29)
+    {
+        cout << "Yes, this seat is within your budget." << endl;
+        return 0;
+    }
+
+    if  (ticket_wanted == 'B' && budget >= 1340.96)
+    {
+        cout << "Yes, this seat is within your budget." << endl;
+        return 0;
+    }
+
+    else if (ticket_wanted == 'G' && budget >= 1075.15)
+    {
+        cout << "Yes, this seat is within your budget!" << endl;
+        return 0;
+    }  
+
+    
+    if (budget <= 1075.15)
+    {
+        cout << "Sorry, this seat is outside your budget." << endl;
+        return 0;
+    } 
+    else if (budget <= 1340.95)
+    {
+        cout << "Sorry, this seat is outside your budget." << endl;
+        return 0;
+    } 
+   else  if (budget <= 1684.29)
+    {
+        cout << "Sorry, this seat is outside your budget." << endl;
+     return 0;
+    } 
+   else if (budget <= 1950.33)
+    {
+        cout << "Sorry, this seat is outside your budget." << endl;
+         return 0;
+    } 
+    return 0;
+}
