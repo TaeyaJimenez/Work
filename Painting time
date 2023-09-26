@@ -1,0 +1,62 @@
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+double estimatePaintingTime(double area, double sqft, double time);
+int main()
+
+{
+double time; 
+double area;
+char painter;
+double speed;
+double sqft;
+cout << "Enter area of the four walls (in sq ft)\n"; 
+cin >> area;
+cout << "Select a painter (W, X, Y or Z) \n";
+cin >> painter;
+
+if (painter != 'W' && painter != 'X' && painter !='Y' && painter !='Z' && painter || area <=0)
+{
+    cout << "Please enter a valid input\n";
+}
+
+else if (painter == 'Z')
+{
+    time = 15;
+    sqft = 7;
+    speed = estimatePaintingTime (area, sqft, time);
+    cout << "The time taken to paint all four walls by painter Z: " << speed/60 << "hours" << endl;
+}
+else if (painter == 'X')
+{
+    time = 10;
+    sqft = 3;
+    speed = estimatePaintingTime (area, sqft, time);
+    cout << "The time taken to paint all four walls by painter X:" << speed/60 << "hours" << endl;
+}
+else if (painter == 'Y')
+{   
+    time = 5;
+    sqft = 2;
+    speed = estimatePaintingTime (area, sqft, time);
+    cout << "The time taken to paint all four walls by painter Y:" << speed/60 << "hours" << endl;
+}
+else if (painter == 'W')
+{
+    time = 12;
+    sqft = 5;
+    speed = estimatePaintingTime (area, sqft, time);
+    cout << "The time taken to paint all four walls by painter W: " << speed/60 << "hours" << endl;
+}
+return 0;
+
+}
+double estimatePaintingTime(double area, double sqft, double time)
+{
+    double speed;
+    speed = (area/sqft) * time;
+    return speed;
+
+}
