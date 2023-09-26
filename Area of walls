@@ -1,0 +1,50 @@
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+double calculatePaintCost (double area, double paintCost);
+int main()
+{
+    string paint_grade ;
+    double area;
+    double price;
+    double paintCost;
+
+    cout << "Enter area of the four walls (in sq ft)\n";
+    cin >> area;
+    cout << "Select the paint grade (A, B, or C)\n ";
+    cin >> paint_grade;
+
+        if (paint_grade != "A" && paint_grade != "B" && paint_grade != "C" || area <=0)
+        {
+            cout << "Please enter a valid input\n";
+        }
+        else if (paint_grade == "C")
+        {
+            paintCost = 2.75;
+            price = calculatePaintCost (area, paintCost);
+            cout << "The total cost to paint all four walls: $" << price << endl;
+        }
+        else if (paint_grade == "B")
+        {
+            paintCost = 1.25;
+            price = calculatePaintCost (area, paintCost);
+            cout << "The total cost to paint all four walls: $" << price << endl;
+        }
+        else if (paint_grade == "A")
+        {
+            paintCost = 0.75;
+            price = calculatePaintCost (area, paintCost);
+            cout << "The total cost to paint all four walls: $" << price << endl;
+        }
+      return 0; //
+
+}
+
+    double calculatePaintCost (double paintCost, double area)
+    {
+        double price ;
+        price = area * paintCost;
+        return price;
+    }
